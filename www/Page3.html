@@ -1,0 +1,84 @@
+<ons-page>
+
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+        </div>
+        <div class="center">Profile</div>
+    </ons-toolbar>
+    
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#insert").click(function() {
+            var phn = $("#phn").val();
+            var fname = $("#fname").val();
+            var lname = $("#lname").val();
+            var age = $("#age")
+            var dataString = "phn=" + phn + "&fname=" + fanme + "&lname=" + lname + "&age=";
+            if ($.trim(title).length > 0 & $.trim(duration).length > 0 & $.trim(price).length > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://nirogiapp.pe.hu/insert2.php",
+                    data: dataString,
+                    crossDomain: true,
+                    cache: false,
+                    
+                });
+            }
+            return false;
+        });
+    });
+    </script>
+
+   <div class="formarea">
+   
+        <div class="form-row">
+          <input type="text" class="text-input--underbar width-full" placeholder="PHN" id="phn" value="">
+        </div>
+   
+        <div class="form-row">
+          <input type="text" class="text-input--underbar width-half" placeholder="First" id="fname" value="">
+          <input type="text" class="text-input--underbar width-half" placeholder="Last" value="" id="lname" style="border-width-left: 1px">
+        </div>
+
+        <div class="form-row">
+          <input type="text" class="text-input--underbar width-full" placeholder="Age" id="age" value="">
+        </div>
+
+        <div class="form-row">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Male
+          </label>
+        </div>
+        
+        <div class="form-row">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            Female
+          </label>
+        </div>
+
+        <div class="lucent">
+          <p class="note">Please Fill All the Fields</p>
+        </div>
+
+        <div class="vspc form-row">
+          <ons-button modifier="large--cta">Submit</ons-button>
+        </div>
+      </div>
+
+</ons-page>
+
+<style>
+.form-row{margin:4px}.width-full{width:100%}.width-half{width:48%}.lucent{opacity:.4}.note{margin:12px 8px;font-size:13px}.vspc{margin-top:20px}.formarea{width:90%;margin:50px auto 0 auto}input[type="text"],input[type="password"]{height:40px;padding-top:10px;padding-bottom:10px}
+
+.hbtn {
+  height: 44px;
+  line-height: 44px;
+  vertical-align: 0;
+  background: #eee;
+  display:inline-block;
+}
